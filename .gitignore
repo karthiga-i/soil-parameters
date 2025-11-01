@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Keep Python files anywhere
+!*.py
+
+# Keep directories so .py files inside them are visible
+!*/
+
+# (Optional) keep this file itself
+!.gitignore
