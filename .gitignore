@@ -9,3 +9,4 @@
 
 # (Optional) keep this file itself
 !.gitignore
+!*.md
