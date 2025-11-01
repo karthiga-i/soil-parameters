@@ -26,6 +26,9 @@ from rasterio import plot
 os.makedirs('./data', exist_ok=True)
 
 # %%
+'''
+Gets soil texture details from location coordinates
+'''
 def get_soil_texure_only(lat, lon):
     # location coordinates (lat, lon)
     # lat = 37.7302
@@ -200,7 +203,9 @@ print(f"{sand_pct}, {silt_pct}, {clay_pct}, {texture_class}")
 # Prepare input data for Rosetta
 # Rosetta expects percentages (not g/kg)
 # Model 2: Sand, Silt, Clay percentages
-
+'''
+Gets ksat from soil texture
+'''
 def get_values(sand_pct, silt_pct, clay_pct, texture_class):
     print(f"\nInput data:")
     print(f"  Sand: {sand_pct:.1f}%")
@@ -275,6 +280,10 @@ def find_col(reader, *candidates):
                 if h:
                     return h
     raise KeyError(f"Required column {candidates} not found in input CSV headers: {reader.fieldnames}")
+
+'''
+Process a CSV file to get ksat from location for a series of locations
+'''
 
 def process_csv(input_csv, output_csv):
     input_path = Path(input_csv)
